@@ -1,0 +1,326 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+/* || VARIABLES */
+
+:root {
+    /* FONTS */
+    --FF: "Maven Pro", sans-serif;
+    --FF-HEADINGS: sans-serif;
+    --FS: clamp(1rem, 2.2vh, 1.5rem);
+
+    /* COLORS */
+    --BGCOLOR-FADE: #FAF7F0;
+    --BGCOLOR: #D8D2C2;
+    --BGIMAGE: linear-gradient(to bottom, var(--BGCOLOR), var(--BGCOLOR-FADE));
+    --BODY-BGCOLOR: #D8D2C2;
+    --BORDER-COLOR: #333;
+    --BUTTON-COLOR: #FAF7F0;
+    --FONT-COLOR: #000;
+
+    --HEADER-BGCOLOR: #000;
+    --HEADER-COLOR: #FFF;
+    --HERO-BGCOLOR: #D8D2C2;;
+    --HERO-COLOR: #FFF; 
+    --HIGHLIGHT-COLOR: rgb(51, 178, 51);
+    --LINK-ACTIVE: orange;
+    --LINK-COLOR: #000;
+    --LINK-HOVER: hsla(0, 0%, 0%, 0.6);
+    --NAV-BGCOLOR: #FFF; 
+
+    /* BORDERS */
+    --BORDERS: 1px solid var(--BORDER-COLOR);
+    --BORDER-RADIUS: 15px; 
+
+    /* STANDARD PADDING */
+    --PADDING-TB: 0.25em;
+    --PADDING-SIDE: 2.5%; 
+
+    /* STANDARD MARGIN */
+    --MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
+}
+
+/* || GENERAL STYLES */
+
+html {
+    scroll-behavior: smooth;
+    font-size: var(--FS);
+    font-family: var(--FF);
+    background-color: var(--BGCOLOR);
+}
+
+body {
+   /* background-color: var(--BODY-BGCOLOR); */
+    color: var(--FONT-COLOR);
+    /* border-left: var(--BORDERS);
+    border-right: var(--BORDERS); 
+    box-shadow: 0 0 10px var(--BORDER-COLOR);*/
+} 
+
+ h1,
+h2,
+h3, 
+h4 {
+    font-family: var(--FF-HEADINGS);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+h2,
+h3,
+h4 {
+    margin-bottom: 1em;
+    color: var(--FONT-COLOR);
+    text-transform: capitalize;
+}
+
+p {
+    line-height: 1.5;
+    font-family: var(--FF);
+}
+hr {
+    border: dotted #e0e5e5 6px;
+    border-bottom: none;
+    width: 15%;
+    margin: 25px auto;
+}
+.gradient-background {
+    /* padding: var(--PADDING-SIDE); */
+    margin: 0 0 1.5em;
+    padding: 0;
+    height: 30vh;
+    place-content: center;
+    text-align: center;
+    background: linear-gradient(300deg, #3B3030, #664343, #FFF0D1);
+    background-size: 180% 180%;
+    animation: gradient-animation 15s ease infinite ;
+    filter: blur(10p);
+    box-shadow: 0 0 15px var(--BORDER-COLOR);
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.title {
+    text-align: center;
+}
+
+.title #display-img {
+    border-radius: 50%;
+    padding: var(--PADDING-TB);
+}
+
+.title h2 {
+    margin: var(--MARGIN);
+}
+.title p {
+    width: 40%;
+    margin: 0 auto 1.5rem;
+    text-align: center; 
+}
+
+/* || HERO */
+
+/* .hero {
+    position: relative;
+}
+
+.hero__h2 {
+    background-color: var(--HERO-BGCOLOR);
+    color: var(--HERO-COLOR);
+    padding: 0.25em 0.5em;
+    text-shadow: 2px 2px 5px var(--BORDER-COLOR);
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    animation: showWelcome 0.5s ease-in-out 1s forwards;
+}
+/*
+@keyframes showWelcome {
+    0% {
+        top: -20px;
+        transform: skew(0deg, -5deg) scaleY(0);
+    }
+
+    80% {
+        top: 30px;
+        transform: skew(-10deg, -5deg) scaleY(1.2);
+    }
+
+    100% {
+        top: 20px;
+        transform: skew(-10deg, -5deg) scaleY(1);
+    }
+} */
+.skills-img {
+    border-radius: 50px;
+    width: 100%;
+    object-fit: cover;
+    padding: 5px 30px;
+  }
+  
+  .card {
+    width: 70%;
+    text-align: justify;
+    margin: auto;
+  }
+  
+  .card-title {
+    text-align: center;
+  }
+  .card-text {
+    margin: 0.5rem;
+  }
+  
+  body > section:nth-child(3) > div > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 2fr 2fr;
+    grid-gap: 1.5rem 0;
+  }
+
+  .skills-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "adiv"
+    "bdiv"
+}
+.adiv > {
+    grid-area: adiv;
+  }
+  
+.bdiv {
+    grid-area: bdiv;
+  }
+
+.carousel-img {
+  width: 100%;
+  height: 60vw;
+  object-fit: cover;
+}
+
+.music {
+  background: linear-gradient(to top, #ff0000, white);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer > .d-flex {
+  padding-bottom: 0;
+  padding-top: var(--PADDING-TB);
+  }
+
+footer > .gradient-background {
+  height: 10vh;
+  margin-left: 35px;
+}
+
+@media (min-width: 600px) and (max-width: 1150px) {
+  body > section:nth-child(3) > div > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 2fr 2fr;
+    grid-gap: 1.5rem 0;
+  }
+  .card {
+    width: 85%;
+    text-align: justify;
+    margin: auto;
+  }
+  .title p {
+    width: 50vw;
+    text-align: center
+  }
+  .skills-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 300px;
+    grid-template-areas: 
+    "adiv"
+    "bdiv"
+  }
+  .gradient-background {
+    height: 20vh;
+    place-content: center;
+    text-align: center;
+    font-size: 20px;
+    background: linear-gradient(300deg, #3B3030, #664343, #FFF0D1);
+    background-size: 180% 180%;
+    animation: gradient-animation 10s ease infinite ;
+    filter: blur(10p);
+    box-shadow: 0 0 15px var(--BORDER-COLOR);
+  }
+}
+
+
+@media (max-width: 576px) {
+  body > section:nth-child(3) > div > div {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin: auto;
+  }
+  .card {
+    width: 90%;
+    text-align: center;
+    text-align: justify;
+    object-fit: cover;
+    margin: auto;
+  }
+  .title p {
+    width: 69vw;
+    text-align: center;
+    font-family: var(--FF);
+  }
+  .carousel-img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+  }
+  .contact-message {
+    width: 75vw;
+    margin: 40px auto;
+  }
+  #title .gradient-background {
+    height: 17vh;
+    justify-content: center;
+    align-content: flex-start;
+  }
+  .gradient-background h1 {
+    font-size: 25px;
+  }
+  .gradient-background #quote {
+    font-size: var(--FS);
+    line-height: 0;
+    text-align: center;
+    width: 100vw;
+    margin: auto;
+    padding-bottom: 1rem;
+  }
+}
